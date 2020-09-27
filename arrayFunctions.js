@@ -9,9 +9,15 @@
  * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
  */
 function getOdds(numbers) {
-  // Your code here
+  const l = []
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i]%2 != 0){
+      l.push(numbers[i])
+    }
+  }
+  return l
 }
-
+console.log(getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]))
 /**
  * getEvens(numbers):
  * - receives an array of numbers called `numbers`
@@ -23,8 +29,15 @@ function getOdds(numbers) {
  * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
  */
 function getEvens(numbers) {
-  // Your code here
+  const l = []
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i]%2 == 0){
+      l.push(numbers[i])
+    }
+  }
+  return l
 }
+console.log(getEvens([1, 2, 3, 4, 5, 6, 7, 8, 9]))
 
 /**
  * getDuplicateCount(x, numbers):
@@ -36,9 +49,15 @@ function getEvens(numbers) {
  * getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
  */
 function getDuplicateCount(x, numbers) {
-  // Your code here
+  let count = 0
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] == x){
+      count++
+    }
+  }
+  return count
 }
-
+console.log(getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]))
 /**
  * youGottaCalmDown(s):
  * - receives a string `s`
@@ -54,7 +73,13 @@ function getDuplicateCount(x, numbers) {
  * - Use string method .endsWith()
  */
 function youGottaCalmDown(s) {
-  // Your code here
+  let str1 = ""
+  for (let i = 0; i < s.length; i++){
+    if (s[i] != "!"){
+      str1 += s[i]
+    }
+  }
+  return str1 + "!"
 }
-
+console.log(youGottaCalmDown("HI!!!!!!!!!!"))
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
